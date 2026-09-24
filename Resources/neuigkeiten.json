@@ -1,6 +1,12 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "releases": [
+    {
+      "version": "1.0.3",
+      "changes": [
+        "ÄNDERUNG: Bei der ersten Verwendung wird die Signatur automatisch auch bei Antworten und Weiterleitungen eingefügt"
+      ]
+    },
     {
       "version": "1.0.2",
       "changes": [
