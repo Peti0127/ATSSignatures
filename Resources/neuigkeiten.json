@@ -1,15 +1,23 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "ÄNDERUNG: Die Schaltfläche „Fehler“ wird nur noch angezeigt, wenn ein Fehler aufgetreten ist",
+        "ÄNDERUNG: Das Fehlerprotokoll speichert die letzten 7 Einträge",
+        "FIX: „Kopieren“ im Fehlerprotokoll kopiert den Text jetzt in die Zwischenablage",
+        "ÄNDERUNG: Wird die Signatur ausgeblendet oder wieder eingeblendet, wird sie in der geöffneten E-Mail sofort entfernt bzw. eingefügt"
+      ]
+    },
     {
       "version": "1.0.0",
       "changes": [
         "NEU: Fehlerprotokoll zum Anzeigen und Kopieren von Fehlermeldungen",
-        "FIX: Hinweise zu fehlenden Profildaten erscheinen nur noch im Add-In, nicht mehr in gesendeten E-Mails",
-        "FIX: Besprechungssignaturen nutzen den Signaturbereich von Outlook; die Teams-Besprechungsinfo bleibt unverändert und in Nur-Text-Terminen erscheint keine versteckte Kennung mehr",
-        "FIX: Korrigierte Texte des Vertraulichkeitshinweises (Deutsch und Englisch)",
-        "ÄNDERUNG: Berechtigungen werden beim automatischen Einfügen direkt über das Microsoft-365-Konto geprüft",
-        "ÄNDERUNG: Schnelleres Laden des Add-Ins"
+        "FIX: Hinweise zu fehlenden Profildaten werden nur noch im Add-In angezeigt und nicht mehr mitgesendet",
+        "FIX: Die Signatur in Besprechungen verändert den Einladungstext und den Teams-Link nicht mehr",
+        "FIX: Korrigierter Text beim Vertraulichkeitshinweis (Deutsch und Englisch)",
+        "ÄNDERUNG: Das Add-In lädt schneller"
       ]
     },
     {

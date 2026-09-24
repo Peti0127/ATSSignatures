@@ -12,7 +12,7 @@
     document.documentElement.dataset.mobile = route.get("mobile") === "1" ? "true" : "false";
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="taskpane.js?rev=78ded734df"></script>
+  <script defer src="taskpane.js?rev=649ae58689"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; --footer-bg:rgba(255,255,255,.98); --button-bg:#090909; --button-ink:#fff; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
@@ -151,7 +151,7 @@
       <div class="footer-inner">
         <div class="footer-actions">
           <a class="feedback-button" href="taskpane.html?view=news">Neuigkeiten</a>
-          <a id="error-log-button" class="feedback-button" href="taskpane.html?view=errors">Fehler</a>
+          <a id="error-log-button" class="feedback-button" href="taskpane.html?view=errors" hidden>Fehler</a>
           <button id="feedback-button" class="feedback-button" type="button" disabled hidden>Feedback</button>
         </div>
         <p id="status" role="status" aria-live="polite">App wird geladen...</p>
@@ -278,7 +278,7 @@
     </header>
     <main class="info-content">
       <p>Hier findest du die letzten Fehler dieser Anmeldung. Öffne bei Bedarf zuerst die Signatur oder Feedback, um den Fehler erneut auszulösen.</p>
-      <p>Das Protokoll enthält bis zu 40 Einträge der letzten 24 Stunden. Es bleibt in diesem Outlook-Client und wird nicht automatisch versendet.</p>
+      <p>Das Protokoll enthält bis zu 7 Einträge der letzten 24 Stunden. Es bleibt in diesem Outlook-Client und wird nicht automatisch versendet.</p>
       <label for="error-log">Fehlerprotokoll</label>
       <textarea id="error-log" readonly spellcheck="false"></textarea>
       <div class="error-log-actions">
