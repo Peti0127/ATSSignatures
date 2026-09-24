@@ -1,0 +1,132 @@
+{
+  "_readme": "Einstellungen des Add-Ins. Änderungen wirken ohne neuen Build, spätestens nach etwa 20 Minuten (Server- und Outlook-Cache) oder nach einem Neustart von Outlook. Gültiges JSON beachten (Anführungszeichen, keine Kommas am Ende).",
+  "entra": {
+    "clientId": "89659501-37e7-4916-abeb-4dc5178e3034",
+    "tenantId": "https://login.microsoftonline.com/1333c2c2-fdf6-4fdc-8559-3dc12559d264"
+  },
+  "officeNumber": "05 7999 100",
+  "feedbackEmail": "pnov@attensam.at",
+  "hotline": "05 7999 9999",
+  "excludedSubjectPrefixes": [
+    "Ihre Objektinformation - ",
+    "Durchführungsbestätigung - ",
+    "Journaleintrag "
+  ],
+  "domainTemplates": [
+    "immometric.at"
+  ],
+  "citySignatures": {
+    "city-neusiedl": "Neusiedl am See",
+    "city-oberwart": "Oberwart",
+    "city-wr-neustadt": "Wr. Neustadt"
+  },
+  "cityAddressOverrides": {
+    "Neusiedl am See": {
+      "city": "Neusiedl am See",
+      "postalCode": "7100",
+      "street": "Peter-Floridan-Gasse 4/Top 1"
+    },
+    "Oberwart": {
+      "city": "Oberwart",
+      "postalCode": "7400",
+      "street": "Schulgasse 42/2"
+    },
+    "Wr. Neustadt": {
+      "city": "Wr. Neustadt",
+      "postalCode": "2700",
+      "street": "Badener Straße 16"
+    }
+  },
+  "banners": [
+    {
+      "cities": [
+        "Wien"
+      ],
+      "href": "https://www.attensam.at/banner_w",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_w.png",
+      "alt": "Banner Wien"
+    },
+    {
+      "cities": [
+        "St. Pölten-Radlberg",
+        "Krems an der Donau"
+      ],
+      "href": "https://www.attensam.at/banner_noe_nord",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_noe_nord.png",
+      "alt": "Banner Niederösterreich Nord"
+    },
+    {
+      "cities": [
+        "Wr. Neustadt"
+      ],
+      "href": "https://www.attensam.at/banner_noe_sued",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_noe_sued.png",
+      "alt": "Banner Niederösterreich Süd"
+    },
+    {
+      "cities": [
+        "Neusiedl am See",
+        "Oberwart"
+      ],
+      "href": "https://www.attensam.at/banner_bgld",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_bgld.png",
+      "alt": "Banner Burgenland"
+    },
+    {
+      "cities": [
+        "Klagenfurt"
+      ],
+      "href": "https://www.attensam.at/banner_ktn",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_ktn.png",
+      "alt": "Banner Kärnten"
+    },
+    {
+      "cities": [
+        "Kalsdorf",
+        "Graz",
+        "Leoben"
+      ],
+      "href": "https://www.attensam.at/banner_stmk",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_stmk.png",
+      "alt": "Banner Steiermark"
+    },
+    {
+      "cities": [
+        "Linz",
+        "Regau"
+      ],
+      "href": "https://www.attensam.at/banner_ooe",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_ooe.png",
+      "alt": "Banner Oberösterreich"
+    },
+    {
+      "cities": [
+        "Salzburg",
+        "Bruck an der Großglocknerstraße"
+      ],
+      "href": "https://www.attensam.at/banner_sbg",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_sbg.png",
+      "alt": "Banner Salzburg"
+    },
+    {
+      "cities": [
+        "Innsbruck"
+      ],
+      "href": "https://www.attensam.at/banner_t",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_t.png",
+      "alt": "Banner Tirol"
+    },
+    {
+      "cities": [
+        "Rankweil"
+      ],
+      "href": "https://www.attensam.at/banner_vbg",
+      "image": "https://storage.googleapis.com/signaturen-attensam-at/images/banner_vbg.png",
+      "alt": "Banner Vorarlberg"
+    }
+  ],
+  "confidentiality": {
+    "de": "Diese E-Mail ist vertraulich und ausschließlich für den (die) genannten Adressaten bestimmt. Wenn Sie nicht der vorgesehene Adressat sind, informieren Sie uns bitte und löschen Sie diese Nachricht. Jede Form der Speicherung, Veröffentlichung, Vervielfältigung, Weitergabe oder das Ergreifen von Handlungen auf der Grundlage des Inhaltes dieser E-Mail ist unzulässig.",
+    "en": "This e-mail is confidential and intended solely for the attention and use of the named addressee(s). If you are not the intended recipient, please inform us immediately and delete the message. Any form of recording, disclosure, reproduction, distribution or other usage of the content of this e-mail, or taking any action in reliance on it, is prohibited."
+  }
+}
