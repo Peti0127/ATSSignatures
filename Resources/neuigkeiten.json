@@ -1,6 +1,12 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "releases": [
+    {
+      "version": "1.0.2",
+      "changes": [
+        "FIX: Nach einer Passwortänderung fragt das Add-In einmal nach einer neuen Anmeldung, statt eine Fehlermeldung anzuzeigen"
+      ]
+    },
     {
       "version": "1.0.1",
       "changes": [
