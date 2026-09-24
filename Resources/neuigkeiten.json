@@ -1,6 +1,12 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "releases": [
+    {
+      "version": "1.0.4",
+      "changes": [
+        "FIX: Im dunkelgrauen Design von Outlook sind alle Texte wieder gut lesbar"
+      ]
+    },
     {
       "version": "1.0.3",
       "changes": [

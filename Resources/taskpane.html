@@ -12,10 +12,17 @@
     document.documentElement.dataset.mobile = route.get("mobile") === "1" ? "true" : "false";
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="taskpane.js?rev=7263302674"></script>
+  <script defer src="taskpane.js?rev=906d13ffbe"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; --footer-bg:rgba(255,255,255,.98); --button-bg:#090909; --button-ink:#fff; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
+    /* Classic Outlook "Dark Gray" (Dunkelgrau): dark grey pane, light grey header,
+       footer and controls. Text colour follows the surface it sits on. */
+    :root[data-client-theme="gray"] { color-scheme:dark; --ink:#ffffff; --muted:#f0f0f0; --line:#8c8c8c; --paper:#666666; --surface:#d4d4d4; --control-bg:#f7f7f7; --control-ink:#141414; --control-border:#7a7a7a; --hover:#e3e3e3; --footer-bg:#d4d4d4; --button-bg:#1f1f1f; --button-ink:#ffffff; }
+    :root[data-client-theme="gray"] header, :root[data-client-theme="gray"] .status-footer, :root[data-client-theme="gray"] .custom-editor, :root[data-client-theme="gray"] .access-denied, :root[data-client-theme="gray"] .context-menu { --ink:#141414; --muted:#3a3a3a; --line:#9e9e9e; --hover:#c2c2c2; color:var(--ink); }
+    :root[data-client-theme="gray"] .step, :root[data-client-theme="gray"] .inline-link { color:#ffc9c9; }
+    :root[data-client-theme="gray"] .validation-warnings, :root[data-client-theme="gray"] .status.error { color:#ffd6d6; }
+    :root[data-client-theme="gray"] header .eyebrow, :root[data-client-theme="gray"] .status-footer .status.error { color:#b00000; }
     @media (prefers-color-scheme:dark) {
       :root:not([data-client-theme="light"]) { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
     }
