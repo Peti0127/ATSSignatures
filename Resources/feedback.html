@@ -11,7 +11,7 @@
     }
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="taskpane.js?rev=ef63177a2d"></script>
+  <script defer src="taskpane.js?rev=5481fc8555"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; }
@@ -63,10 +63,10 @@
       <div class="field">
         <label for="feedback-category">Kategorie</label>
         <select id="feedback-category" required>
-          <option value="Fehler">Fehler</option>
-          <option value="Wünsche">Wünsche</option>
           <option value="Feedback">Feedback</option>
+          <option value="Wunsch">Wunsch</option>
           <option value="Hilfe">Hilfe</option>
+          <option value="Fehler">Fehler</option>
         </select>
       </div>
       <div class="field">
@@ -84,7 +84,6 @@
   <footer class="status-footer">
     <div class="footer-inner">
       <p id="feedback-status" class="status" role="status" aria-live="polite">App wird geladen...</p>
-      <span class="version" data-release-version></span>
     </div>
   </footer>
 </body>
