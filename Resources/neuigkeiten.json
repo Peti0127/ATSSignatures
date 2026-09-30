@@ -6,7 +6,7 @@
       "changes": [
         "FIX: Geänderte Berechtigungen werden beim Öffnen des Add-Ins sofort übernommen",
         {
-          "text": "ÄNDERUNG: Die angezeigten Standorte werden jetzt über die neue Schaltfläche 🏢 oben rechts ausgewählt",
+          "text": "ÄNDERUNG: Die angezeigten Standorte werden jetzt über die neue Schaltfläche mit dem Gebäude-Symbol oben rechts ausgewählt",
           "role": "CityChange"
         },
         {
