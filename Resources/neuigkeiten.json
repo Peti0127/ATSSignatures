@@ -4,7 +4,15 @@
     {
       "version": "1.3.1",
       "changes": [
-        "FIX: Geänderte Berechtigungen werden beim Öffnen des Add-Ins sofort übernommen"
+        "FIX: Geänderte Berechtigungen werden beim Öffnen des Add-Ins sofort übernommen",
+        {
+          "text": "ÄNDERUNG: Die angezeigten Standorte werden jetzt über die neue Schaltfläche 🏢 oben rechts ausgewählt",
+          "role": "CityChange"
+        },
+        {
+          "text": "FIX: Die Auswahl der Standorte und die vorgewählte Standort-Signatur werden zuverlässig gespeichert",
+          "role": "CityChange"
+        }
       ]
     },
     {

@@ -8,11 +8,11 @@
   <script>
     const route = new URLSearchParams(window.location.search);
     if (route.get("view") === "help") window.location.replace("hilfe.html");
-    document.documentElement.dataset.view = ["settings", "help", "news", "errors"].includes(route.get("view")) ? route.get("view") : "taskpane";
+    document.documentElement.dataset.view = ["settings", "help", "news", "errors", "cities"].includes(route.get("view")) ? route.get("view") : "taskpane";
     document.documentElement.dataset.mobile = route.get("mobile") === "1" ? "true" : "false";
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="taskpane.js?rev=d56aa7f722"></script>
+  <script defer src="taskpane.js?rev=87fc2cdca9"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; --footer-bg:rgba(255,255,255,.98); --button-bg:#090909; --button-ink:#fff; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
@@ -33,7 +33,8 @@
     html[data-view="settings"] #settings-view,
     html[data-view="help"] #help-view,
     html[data-view="news"] #news-view,
-    html[data-view="errors"] #errors-view { display:block; }
+    html[data-view="errors"] #errors-view,
+    html[data-view="cities"] #cities-view { display:block; }
     header { display:flex; align-items:center; gap:12px; min-height:72px; padding:15px 18px; background:var(--surface); border-bottom:3px solid var(--red); }
     .logo-frame { display:grid; place-items:center; width:38px; height:34px; flex:0 0 auto; padding-right:12px; border-right:1px solid var(--line); }
     .logo { display:block; width:24px; height:24px; object-fit:contain; }
@@ -41,6 +42,10 @@
     h1 { margin:0; color:var(--ink); font-size:18px; font-weight:600; }
     h2 { margin:0; font-size:20px; font-weight:600; }
     .nav-link { display:grid; place-items:center; width:36px; height:36px; margin-left:auto; padding:0; border:0; border-radius:0; color:var(--ink); background:transparent; font-size:21px; font-weight:400; line-height:1; text-decoration:none; }
+    #cities-button { font-size:19px; }
+    #cities-button:not([hidden]) + .nav-link { margin-left:0; }
+    #city-checkboxes { display:grid; gap:14px; margin-top:18px; }
+    #cities-view main { max-width:560px; margin:0 auto; padding:18px 18px 110px; }
     .nav-link:hover, .nav-link:focus-visible { color:var(--red); background:var(--hover); outline:2px solid rgba(225,0,0,.18); outline-offset:0; }
     main { padding:20px 18px 92px; }
     .add-signature { display:grid; place-items:center; width:34px; height:34px; margin:0 0 10px auto; border:1px solid var(--button-bg); border-radius:0; color:var(--button-ink); background:var(--button-bg); font-size:24px; line-height:1; }
@@ -78,16 +83,6 @@
     label { display:block; margin-bottom:8px; font-size:13px; font-weight:700; }
     select, input[type="text"] { width:100%; min-height:42px; padding:0 11px; border:1px solid var(--control-border); border-radius:0; background:var(--control-bg); color:var(--control-ink); font:inherit; }
     select:focus, input[type="text"]:focus { border-color:var(--red); box-shadow:0 0 0 2px rgba(225,0,0,.12); outline:none; }
-    .field-label { display:block; margin-bottom:8px; font-size:13px; font-weight:700; }
-    .multi-select { position:relative; }
-    .multi-select summary { display:flex; align-items:center; min-height:42px; padding:0 34px 0 11px; border:1px solid var(--control-border); background:var(--control-bg); color:var(--control-ink); cursor:pointer; list-style:none; position:relative; }
-    .multi-select summary::-webkit-details-marker { display:none; }
-    .multi-select summary::after { content:""; position:absolute; right:14px; top:50%; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:translateY(-70%) rotate(45deg); }
-    .multi-select[open] summary::after { transform:translateY(-20%) rotate(-135deg); }
-    .multi-select[open] summary, .multi-select summary:focus-visible { border-color:var(--red); outline:none; }
-    .multi-select [role="group"] { display:grid; gap:12px; padding:12px 11px; border:1px solid var(--control-border); border-top:0; background:var(--control-bg); color:var(--control-ink); }
-    .multi-select .checkbox-row span { font-weight:400; }
-    :root[data-client-theme="gray"] .multi-select [role="group"] { color-scheme:light; }
     .checkbox-row { display:flex; align-items:center; gap:10px; margin:0; cursor:pointer; }
     .checkbox-row input { width:18px; height:18px; margin:0; accent-color:var(--red); }
     .checkbox-row span { font-size:13px; font-weight:700; }
@@ -141,6 +136,7 @@
       <div class="logo-frame" aria-hidden="true"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABKVBMVEUAAADgAADfAAD/AADiAADhAADhAADiAADhAADYAADhAADiAADgAADhAADkAADhAADgAADhAADhAAD/AADiAADhAADgAADlAADhAADhAADgAADhAADgAADhAAD/AADhAADhAADkAADbAADhAADhAADdAADhAADiAADhAADhAADhAADhAADmAADgAADgAADgAADiAADhAADhAADhAADgAADhAADgAADhAADhAADjAADhAADhAADiAADhAADgAADgAADhAADjAADhAADfAADiAADiAADhAADhAADhAADiAADhAADhAADiAADhAADhAADgAADgAADhAADiAADhAADhAADcAADhAADfAADhAADhAADgAAD/AADjAADiAADiAADjAADjAADhAAD///+ZudeEAAAAYXRSTlMAGUAEI/CwlDMN8Zxs9hPTc0PcAq3iSh3740m1hX8B2v4mB+j8HniMXKq77grIZDHQnzv3UqGmd8El/foa3lO3fgmXOINHhvMiUMM8LNaBa8D4aVTyFnAIuZpLAzZGPi0SEn2rxQAAAAFiS0dEYiu5HTwAAAAJcEhZcwAAAdEAAAHRAQyRTPMAAAAHdElNRQflDA8OIxS5I1PQAAABCUlEQVQ4y2NgoDNgZGLGK8/CmsiGVwF7YmIiBx55Ti6gAm48CniA8om8fLgV8IMUJArglBcEyycKCeNSIAKUFQViMRzy4hKJiZJSQAXSOBTIAOVk5eQTExUUscorKScmqqgyqAGVqWNVoAGU4dLU1AJS2jrYFOgmIoAeFnl9JPlEAywKDJEVJBphyPMZA4VNOEDAFMgyw1BgDhS1gDAtrRITrW3Q5IVtgQrsoBx7INuBgRzg6CSOzHV2cUVT4Jbo7uYBU+zplZho5Y0i72MN8qCvoZ+/uXpAINi3QSgKgkMS0YB8KKoV4tzWyNKiYeEYzmQMi4AaIxQZFY3dK9HiMbFx8QlkBQO5AADiCU4jdj6PHwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMi0xNVQxNDozNToyMCswMDowMJfACAgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTItMTVUMTQ6MzU6MjArMDA6MDDmnbC0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==" alt=""></div>
       <div><p class="eyebrow">ATTENSAM</p><h1>Signatur</h1></div>
       <a id="main-settings-link" class="nav-link" href="taskpane.html?view=settings&amp;signature=standard" aria-label="Einstellungen öffnen" title="Einstellungen" hidden>&#9881;</a>
+      <a id="cities-button" class="nav-link" href="taskpane.html?view=cities" aria-label="Standorte auswählen" title="Standorte" hidden>&#127970;</a>
       <a class="nav-link" href="hilfe.html" aria-label="Hilfe öffnen" title="Hilfe"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg></a>
     </header>
     <main id="signature-main" hidden>
@@ -260,14 +256,6 @@
       <div id="confidentiality-english-field" class="field nested-field" hidden>
         <label class="checkbox-row" for="confidentiality-english"><input id="confidentiality-english" type="checkbox" disabled><span>Auch auf Englisch einfügen</span></label>
       </div>
-      <div id="city-selection-field" class="field" hidden>
-        <span id="city-selection-label" class="field-label">Standorte</span>
-        <details id="city-selection" class="multi-select">
-          <summary id="city-selection-summary" aria-labelledby="city-selection-label city-selection-summary">Alle Standorte</summary>
-          <div id="city-selection-options" role="group" aria-labelledby="city-selection-label"></div>
-        </details>
-        <p class="hint">Nur die ausgewählten Standorte werden als Signatur zum Einfügen angezeigt.</p>
-      </div>
       <h2 style="margin-top:28px">Automatisches Einfügen</h2>
       <div id="disable-computer-insertion-field" class="field" hidden>
         <label class="checkbox-row" for="disable-computer-insertion"><input id="disable-computer-insertion" type="checkbox" disabled><span>Signatur nicht einfügen</span></label>
@@ -308,6 +296,22 @@
       <div class="footer-inner">
         <p id="settings-status" role="status" aria-live="polite">Einstellungen werden geladen …</p>
         <button id="close-button" type="button">Fertig</button>
+      </div>
+    </footer>
+  </section>
+  <section id="cities-view" class="route-view">
+    <header>
+      <div class="logo-frame" aria-hidden="true"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABKVBMVEUAAADgAADfAAD/AADiAADhAADhAADiAADhAADYAADhAADiAADgAADhAADkAADhAADgAADhAADhAAD/AADiAADhAADgAADlAADhAADhAADgAADhAADgAADhAAD/AADhAADhAADkAADbAADhAADhAADdAADhAADiAADhAADhAADhAADhAADmAADgAADgAADgAADiAADhAADhAADhAADgAADhAADgAADhAADhAADjAADhAADhAADiAADhAADgAADgAADhAADjAADhAADfAADiAADiAADhAADhAADhAADiAADhAADhAADiAADhAADhAADgAADgAADhAADiAADhAADhAADcAADhAADfAADhAADhAADgAAD/AADjAADiAADiAADjAADjAADhAAD///+ZudeEAAAAYXRSTlMAGUAEI/CwlDMN8Zxs9hPTc0PcAq3iSh3740m1hX8B2v4mB+j8HniMXKq77grIZDHQnzv3UqGmd8El/foa3lO3fgmXOINHhvMiUMM8LNaBa8D4aVTyFnAIuZpLAzZGPi0SEn2rxQAAAAFiS0dEYiu5HTwAAAAJcEhZcwAAAdEAAAHRAQyRTPMAAAAHdElNRQflDA8OIxS5I1PQAAABCUlEQVQ4y2NgoDNgZGLGK8/CmsiGVwF7YmIiBx55Ti6gAm48CniA8om8fLgV8IMUJArglBcEyycKCeNSIAKUFQViMRzy4hKJiZJSQAXSOBTIAOVk5eQTExUUscorKScmqqgyqAGVqWNVoAGU4dLU1AJS2jrYFOgmIoAeFnl9JPlEAywKDJEVJBphyPMZA4VNOEDAFMgyw1BgDhS1gDAtrRITrW3Q5IVtgQrsoBx7INuBgRzg6CSOzHV2cUVT4Jbo7uYBU+zplZho5Y0i72MN8qCvoZ+/uXpAINi3QSgKgkMS0YB8KKoV4tzWyNKiYeEYzmQMi4AaIxQZFY3dK9HiMbFx8QlkBQO5AADiCU4jdj6PHwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMi0xNVQxNDozNToyMCswMDowMJfACAgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTItMTVUMTQ6MzU6MjArMDA6MDDmnbC0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==" alt=""></div>
+      <div><p class="eyebrow">ATTENSAM</p><h1>Standorte</h1></div>
+      <a class="nav-link" href="taskpane.html" aria-label="Zurück zur Signatur" title="Zurück">&#8592;</a>
+    </header>
+    <main>
+      <p class="hint" style="margin-top:0">Wähle die Standorte, deren Signatur zum Einfügen angezeigt werden soll.</p>
+      <div id="city-checkboxes" role="group" aria-label="Standorte"></div>
+    </main>
+    <footer class="status-footer">
+      <div class="footer-inner">
+        <p id="cities-status" role="status" aria-live="polite">Standorte werden geladen …</p>
       </div>
     </footer>
   </section>
