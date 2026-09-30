@@ -12,6 +12,10 @@
         {
           "text": "FIX: Die Auswahl der Standorte und die vorgewählte Standort-Signatur werden zuverlässig gespeichert",
           "role": "CityChange"
+        },
+        {
+          "text": "ÄNDERUNG: Neues Symbol zum Hinzufügen benutzerdefinierter Signaturen",
+          "role": "VIP"
         }
       ]
     },
