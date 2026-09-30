@@ -1,6 +1,19 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "releases": [
+    {
+      "version": "1.2.1",
+      "changes": [
+        {
+          "text": "ÄNDERUNG: Neue benutzerdefinierte Signaturen übernehmen die Einstellungen der Standard-Signatur, bis eigene Einstellungen gespeichert werden",
+          "role": "VIP"
+        },
+        {
+          "text": "NEU: Standort-Signaturen haben eigene Einstellungen. Bis zur ersten Änderung gelten die Einstellungen der Standard-Signatur",
+          "role": "CityChange"
+        }
+      ]
+    },
     {
       "version": "1.2.0",
       "changes": [
