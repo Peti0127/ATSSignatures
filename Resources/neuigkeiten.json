@@ -1,6 +1,15 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "releases": [
+    {
+      "version": "1.2.0",
+      "changes": [
+        {
+          "text": "NEU: Eine Standort-Signatur kann am Computer und in Outlook Mobile als Standard festgelegt werden und wird dann automatisch eingefügt",
+          "role": "CityChange"
+        }
+      ]
+    },
     {
       "version": "1.1.0",
       "changes": [
