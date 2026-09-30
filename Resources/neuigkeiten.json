@@ -1,6 +1,12 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "releases": [
+    {
+      "version": "1.2.2",
+      "changes": [
+        "FIX: In manchen E-Mail-Programmen und Nur-Text-Nachrichten war bei der Signatur das Wort „Attensam-Signatur“ zu sehen. Das kommt nicht mehr vor"
+      ]
+    },
     {
       "version": "1.2.1",
       "changes": [
