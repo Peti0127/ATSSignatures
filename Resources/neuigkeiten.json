@@ -7,6 +7,10 @@
         {
           "text": "NEU: Eine Standort-Signatur kann am Computer und in Outlook Mobile als Standard festgelegt werden und wird dann automatisch eingefügt",
           "role": "CityChange"
+        },
+        {
+          "text": "FIX: Benutzerdefinierte Signaturen werden wieder mit Outlook Mobile und anderen Geräten abgeglichen",
+          "role": "VIP"
         }
       ]
     },
