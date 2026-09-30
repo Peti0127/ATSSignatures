@@ -12,7 +12,7 @@
     document.documentElement.dataset.mobile = route.get("mobile") === "1" ? "true" : "false";
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="taskpane.js?rev=1ba5e7c484"></script>
+  <script defer src="taskpane.js?rev=bc2a8ad9c7"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; --footer-bg:rgba(255,255,255,.98); --button-bg:#090909; --button-ink:#fff; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
@@ -78,6 +78,16 @@
     label { display:block; margin-bottom:8px; font-size:13px; font-weight:700; }
     select, input[type="text"] { width:100%; min-height:42px; padding:0 11px; border:1px solid var(--control-border); border-radius:0; background:var(--control-bg); color:var(--control-ink); font:inherit; }
     select:focus, input[type="text"]:focus { border-color:var(--red); box-shadow:0 0 0 2px rgba(225,0,0,.12); outline:none; }
+    .field-label { display:block; margin-bottom:8px; font-size:13px; font-weight:700; }
+    .multi-select { position:relative; }
+    .multi-select summary { display:flex; align-items:center; min-height:42px; padding:0 34px 0 11px; border:1px solid var(--control-border); background:var(--control-bg); color:var(--control-ink); cursor:pointer; list-style:none; position:relative; }
+    .multi-select summary::-webkit-details-marker { display:none; }
+    .multi-select summary::after { content:""; position:absolute; right:14px; top:50%; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:translateY(-70%) rotate(45deg); }
+    .multi-select[open] summary::after { transform:translateY(-20%) rotate(-135deg); }
+    .multi-select[open] summary, .multi-select summary:focus-visible { border-color:var(--red); outline:none; }
+    .multi-select [role="group"] { display:grid; gap:12px; padding:12px 11px; border:1px solid var(--control-border); border-top:0; background:var(--control-bg); color:var(--control-ink); }
+    .multi-select .checkbox-row span { font-weight:400; }
+    :root[data-client-theme="gray"] .multi-select [role="group"] { color-scheme:light; }
     .checkbox-row { display:flex; align-items:center; gap:10px; margin:0; cursor:pointer; }
     .checkbox-row input { width:18px; height:18px; margin:0; accent-color:var(--red); }
     .checkbox-row span { font-size:13px; font-weight:700; }
@@ -249,6 +259,14 @@
       </div>
       <div id="confidentiality-english-field" class="field nested-field" hidden>
         <label class="checkbox-row" for="confidentiality-english"><input id="confidentiality-english" type="checkbox" disabled><span>Auch auf Englisch einfügen</span></label>
+      </div>
+      <div id="city-selection-field" class="field" hidden>
+        <span id="city-selection-label" class="field-label">Standorte</span>
+        <details id="city-selection" class="multi-select">
+          <summary id="city-selection-summary" aria-labelledby="city-selection-label city-selection-summary">Alle Standorte</summary>
+          <div id="city-selection-options" role="group" aria-labelledby="city-selection-label"></div>
+        </details>
+        <p class="hint">Nur die ausgewählten Standorte werden als Signatur zum Einfügen angezeigt.</p>
       </div>
       <h2 style="margin-top:28px">Automatisches Einfügen</h2>
       <div id="disable-computer-insertion-field" class="field" hidden>
