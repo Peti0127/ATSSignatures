@@ -1,6 +1,15 @@
 {
-  "version": "1.0.4",
+  "version": "1.1.0",
   "releases": [
+    {
+      "version": "1.1.0",
+      "changes": [
+        {
+          "text": "NEU: VIP-Benutzer sehen in Outlook Mobile alle ihre Signaturen und können durch langes Drücken die Einstellungen öffnen oder eine Signatur vorwählen",
+          "role": "VIP"
+        }
+      ]
+    },
     {
       "version": "1.0.4",
       "changes": [
@@ -150,7 +159,10 @@
     {
       "version": "0.8.66",
       "changes": [
-        "ÄNDERUNG: Alternative Standorte sind jetzt als eigene Signaturvorschau auswählbar"
+        {
+          "text": "ÄNDERUNG: Alternative Standorte sind jetzt als eigene Signaturvorschau auswählbar",
+          "role": "CityChange"
+        }
       ]
     },
     {
@@ -168,13 +180,19 @@
     {
       "version": "0.8.63",
       "changes": [
-        "FIX: Felder für eigene Namen werden für berechtigte User zuverlässiger angezeigt"
+        {
+          "text": "FIX: Felder für eigene Namen werden für berechtigte User zuverlässiger angezeigt",
+          "role": "NameChange"
+        }
       ]
     },
     {
       "version": "0.8.62",
       "changes": [
-        "NEU: Eigene Vor- und Nachnamen für berechtigte User wählbar"
+        {
+          "text": "NEU: Eigene Vor- und Nachnamen für berechtigte User wählbar",
+          "role": "NameChange"
+        }
       ]
     },
     {
@@ -239,7 +257,10 @@
       "changes": [
         "NEU: Automatische Signatur für Antworten und Weiterleitungen getrennt wählbar",
         "NEU: Signatur für interne Mails ausschaltbar",
-        "NEU: Stadtwahl mit CityChange-Rolle verfügbar",
+        {
+          "text": "NEU: Stadtwahl mit CityChange-Rolle verfügbar",
+          "role": "CityChange"
+        },
         "ÄNDERUNG: Betreffregel für „Ihre Objektinformation - “ ergänzt",
         "FIX: Absenderwechsel in Outlook Classic verbessert",
         "NEU: Feedbackformular hinzugefügt",
@@ -261,13 +282,19 @@
     {
       "version": "0.8.16",
       "changes": [
-        "FIX: Aktualisierung von VIP-Signaturen verbessert"
+        {
+          "text": "FIX: Aktualisierung von VIP-Signaturen verbessert",
+          "role": "VIP"
+        }
       ]
     },
     {
       "version": "0.8.15",
       "changes": [
-        "NEU: Titelplatzhalter {TitelVor} und {TitelNach} verfügbar"
+        {
+          "text": "NEU: Titelplatzhalter {TitelVor} und {TitelNach} verfügbar",
+          "role": "VIP"
+        }
       ]
     },
     {
@@ -310,7 +337,10 @@
     {
       "version": "0.8.3",
       "changes": [
-        "NEU: Eigene Einstellungen und Kontextmenüs für VIP-Signaturen"
+        {
+          "text": "NEU: Eigene Einstellungen und Kontextmenüs für VIP-Signaturen",
+          "role": "VIP"
+        }
       ]
     }
   ]
