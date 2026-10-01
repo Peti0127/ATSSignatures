@@ -2,7 +2,8 @@
   "_readme": "Einstellungen des Add-Ins. Änderungen wirken ohne neuen Build, spätestens nach etwa 20 Minuten (Server- und Outlook-Cache) oder nach einem Neustart von Outlook. Gültiges JSON beachten (Anführungszeichen, keine Kommas am Ende).",
   "entra": {
     "clientId": "89659501-37e7-4916-abeb-4dc5178e3034",
-    "tenantId": "https://login.microsoftonline.com/1333c2c2-fdf6-4fdc-8559-3dc12559d264"
+    "tenantId": "https://login.microsoftonline.com/1333c2c2-fdf6-4fdc-8559-3dc12559d264",
+    "rolesScope": "api://89659501-37e7-4916-abeb-4dc5178e3034/access_as_user"
   },
   "officeNumber": "05 7999 100",
   "feedbackEmail": "pnov@attensam.at",
