@@ -1,21 +1,11 @@
 {
-  "version": "1.3.2 Hotfix 2",
+  "version": "1.3.2 Hotfix 3",
   "releases": [
     {
-      "version": "1.3.2 Hotfix 2",
+      "version": "1.3.2 Hotfix 3",
       "changes": [
-        "FIX: In Outlook Classic wechselt die Signatur bei neuen E-Mails wieder zurück, wenn alle Empfänger entfernt werden"
-      ]
-    },
-    {
-      "version": "1.3.2 Hotfix 1",
-      "changes": [
-        "FIX: Die Signatur wechselt auch wieder zurück, wenn Empfänger entfernt werden (z. B. externer Empfänger aus CC entfernt → wieder interne Signatur)"
-      ]
-    },
-    {
-      "version": "1.3.2",
-      "changes": [
+        "FIX: Die Signatur wechselt auch wieder zurück, wenn Empfänger entfernt werden (z. B. externer Empfänger aus CC entfernt → wieder interne Signatur)",
+        "FIX: Beim Senden wird noch einmal geprüft, ob die Signatur zu den Empfängern passt, und sie wird bei Bedarf ausgetauscht",
         "FIX: Werden nur interne Empfänger eingetragen, wird die Signatur wieder automatisch durch die interne Signatur ersetzt – und beim Hinzufügen externer Empfänger wieder zurück"
       ]
     },
