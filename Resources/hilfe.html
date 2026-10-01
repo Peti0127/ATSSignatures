@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-build="59f7b64db3">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,7 +11,7 @@
     document.documentElement.dataset.mobile = route.get("mobile") === "1" ? "true" : "false";
   </script>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script defer src="help.js?rev=d4fc3043cf"></script>
+  <script defer src="help.js?rev=59f7b64db3"></script>
   <style>
     :root { color-scheme:light; --red:#e10000; --ink:#090909; --muted:#666; --line:#d2d2d2; --paper:#f7f7f7; --surface:#fff; --control-bg:#fff; --control-ink:#090909; --control-border:#aaa; --hover:#f1f1f1; --footer-bg:rgba(255,255,255,.98); --button-bg:#090909; --button-ink:#fff; }
     :root[data-client-theme="dark"] { color-scheme:dark; --ink:#f2f2f2; --muted:#b8b8b8; --line:#4a4a4a; --paper:#111; --surface:#222; --control-bg:#2b2b2b; --control-ink:#f5f5f5; --control-border:#656565; --hover:#333; --footer-bg:rgba(28,28,28,.98); --button-bg:#ededed; --button-ink:#111; }
@@ -105,6 +105,21 @@
     html[data-mobile="true"] #settings-view main { max-width:560px; margin:0 auto; padding-bottom:110px; }
     html[data-mobile="true"] #settings-back { display:none; }
     html[data-mobile="true"] #close-button { display:block; }
+    .help .lead { font-size:14px; }
+    .help section { padding-top:4px; scroll-margin-top:12px; }
+    .help ol, .help ul { padding-left:20px; margin:8px 0; }
+    .help li { margin:4px 0; }
+    .help .note { padding:10px 12px; border-left:3px solid var(--red); background:var(--hover); color:var(--ink); }
+    .toc { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 6px; }
+    .toc a { padding:6px 10px; border:1px solid var(--line); color:var(--ink); text-decoration:none; font-size:12px; }
+    .toc a:hover, .toc a:focus-visible { border-color:var(--red); color:var(--red); outline:none; }
+    .settings-list { margin:10px 0; }
+    .settings-list dt { font-weight:700; margin-top:10px; }
+    .settings-list dd { margin:2px 0 0; }
+    .help details { border:1px solid var(--line); margin:8px 0; }
+    .help summary { padding:10px 12px; cursor:pointer; font-weight:700; }
+    .help details p { margin:0; padding:0 12px 12px; }
+    :root[data-client-theme="gray"] .help .note, :root[data-client-theme="dark"] .help .note { background:rgba(255,255,255,.08); }
   </style>
 </head>
 <body>
@@ -114,20 +129,138 @@
       <h1>Hilfe</h1>
       <a class="nav-link" href="taskpane.html" aria-label="Zurück zur Signatur" title="Zurück">&#8592;</a>
     </header>
-    <main class="info-content"><h2>Signatur einfügen</h2><p>Öffne das Add-In in einer E-Mail und warte, bis die Signaturdaten geladen sind. Klicke auf die Vorschau, um die Signatur einzufügen.</p>
-<h2>Einstellungen öffnen</h2><p>Klicke mit der rechten Maustaste auf die Signatur und wähle „Einstellungen“. Änderungen werden gespeichert und können die bereits eingefügte Signatur aktualisieren.</p>
-<h2>Signatur beim Senden im Auftrag</h2><p>Beim Senden im Auftrag siehst du oben die Auftragssignatur und darunter deine eigene Signatur. Klicke auf die gewünschte Vorschau zum Einfügen. Über Rechtsklick kannst du sie für die gewählte Absenderadresse als Standard speichern. Diese Auswahl gilt für dein Benutzerkonto und ist für jede abweichende Absenderadresse möglich – auch für EDV, Office, Marketing und Benutzer mit nur einem Vornamen.</p>
-<h2>Weitere Standorte</h2><p>Wenn du weitere Standorte verwenden darfst, siehst du unter „Standard Signatur“ zusätzliche Vorschauen mit den Städtenamen. Klicke auf eine Vorschau, um diese Adresse einzufügen. Die Einstellungen teilen sich alle Standortvorschauen mit der Standard-Signatur.</p>
-<h2>Grußformel und Telefonnummern</h2><p>Wähle eine Grußformel und die anzuzeigenden Telefonnummern. Vorgabe: keine Grußformel, Handy und Festnetz. Vorhandene Titel werden automatisch angezeigt. Hinweise zur mobilen Nutzung und Vertraulichkeit kannst du bei Bedarf aktivieren.</p>
-<h2>Eigener Name</h2><p>Mit der NameChange-Berechtigung kannst du in den Einstellungen einen eigenen Vor- und Nachnamen für deine Signatur angeben. Leere Felder verwenden die Profildaten. Dein Microsoft-365-Profil wird nicht geändert.</p>
-<h2>Automatisches Einfügen</h2><p>Neue E-Mails erhalten standardmäßig eine Signatur. Für Antworten und Weiterleitungen gibt es jeweils eine eigene Checkbox.</p>
-<h2>Interne E-Mails</h2><p>„Signatur bei internen Emails nicht einfügen“ unterdrückt die Signatur bei Antworten und Weiterleitungen mit ausschließlich internen Empfängern. Intern bedeutet: gleiche E-Mail-Domain wie dein Konto. Mit „Auch bei neuen Mails nicht einfügen“ gilt das zusätzlich für neue Nachrichten. Im Textfeld „Signatur für interne E-Mails“ kannst du eine kurze eigene Signatur wie „LG Peter“ hinterlegen. Zeilenumbrüche werden übernommen. Lässt du das Feld leer, wird keine Signatur eingefügt. Sobald externe Empfänger dabei sind, gelten wieder die normalen Einstellungen zum automatischen Einfügen und die vollständige Signatur wird verwendet.</p>
-<h2>ASE-generierte Mails</h2><p>„Bei ASE generierten Mails keine Signatur einfügen“ unterdrückt oder entfernt auf dem PC die Signatur, wenn der Betreff mit „Ihre Objektinformation - “, „Durchführungsbestätigung - “ oder „Journaleintrag “ beginnt. Die Prüfung erfolgt auch vor dem Senden. Auf Mobilgeräten gilt diese Regel nicht.</p>
-<h2>Im Auftrag von</h2><p>Beim Wechsel der Von-Adresse wird das Profil des gewählten Absenders verwendet, sofern es geladen werden kann. Bei Personen erscheint die Kennzeichnung „im Auftrag von“. Konten mit nur einem Vornamen erhalten ihre eigene Signatur ohne diese Kennzeichnung. In Outlook Classic kann die Aktualisierung etwas dauern.</p>
-<h2>Besprechungen</h2><p>Aktiviere „Automatisches Einfügen bei Besprechungen“, um die Signatur bei neu erstellten Besprechungen als Organisator einzufügen. Bereits vorhandene Termine werden dadurch nicht nachträglich geändert.</p>
-<h2>Gespeicherte Signaturdaten</h2><p>Wenn aktuelle Profildaten nicht geladen werden können, kann das Add-In passende gespeicherte Daten bis zu 14 Tage lang verwenden. Ein Hinweis zeigt die Verwendung dieser Daten an. Ohne Internet kann Outlook den Start des Add-Ins einschränken.</p>
-<section id="help-vip" hidden><h2>Benutzerdefinierte Signaturen (VIP)</h2><p>Über das Plus kannst du bis zu drei eigene Signaturen anlegen. Das Kontextmenü bietet Einstellungen, die Auswahl als Standard sowie bei eigenen Signaturen Bearbeiten und Löschen. Jede Signatur hat eigene Einstellungen; automatisches Einfügen verwendet die als Standard gewählte Signatur.</p><p><a class="inline-link" href="placeholders.html">Profilplatzhalter anzeigen</a></p></section>
-<h2>Feedback und Hilfe anfordern</h2><p>Über „Feedback“ kannst du Fehler, Wünsche, Feedback oder eine Hilfeanfrage senden. Wähle eine Kategorie und beschreibe dein Anliegen. Die Nachricht wird mit deinem Konto ohne Signatur versendet. Bei fehlendem Zugriff kontaktiere bitte die EDV.</p></main>
+    <main class="info-content help">
+      <p class="lead">Das Add-In fügt deine Attensam-Signatur automatisch in E-Mails ein – mit deinen aktuellen Daten aus Microsoft 365. Hier findest du alles Wichtige auf einen Blick.</p>
+
+      <nav class="toc" aria-label="Inhalt">
+        <a href="#einfuegen">Signatur einfügen</a>
+        <a href="#einstellungen">Einstellungen</a>
+        <a href="#automatisch">Automatisch einfügen</a>
+        <a href="#intern">Interne E-Mails</a>
+        <a href="#absender">Anderer Absender</a>
+        <a href="#mobil">Outlook Mobile</a>
+        <a href="#name" data-role="NameChange" hidden>Eigener Name</a>
+        <a href="#standorte" data-role="CityChange" hidden>Standorte</a>
+        <a href="#vip" data-role="VIP" hidden>Eigene Signaturen</a>
+        <a href="#probleme">Probleme lösen</a>
+      </nav>
+
+      <section id="einfuegen">
+        <h2>Signatur einfügen</h2>
+        <p><strong>Automatisch:</strong> Bei neuen E-Mails wird die Signatur von selbst eingefügt – du musst nichts tun.</p>
+        <p><strong>Von Hand:</strong></p>
+        <ol>
+          <li>Öffne in einer E-Mail das Add-In „Attensam Signatur“.</li>
+          <li>Warte kurz, bis die Vorschau erscheint.</li>
+          <li>Klicke auf die Vorschau – die Signatur wird eingefügt bzw. ersetzt.</li>
+        </ol>
+        <p class="note">Fehlen Daten in deinem Profil (z. B. Mobilnummer), siehst du einen Hinweis im Add-In. Bitte wende dich dann an die EDV – der Hinweis selbst wird nie mitgesendet.</p>
+      </section>
+
+      <section id="einstellungen">
+        <h2>Einstellungen</h2>
+        <p><strong>Öffnen:</strong> Klicke mit der rechten Maustaste auf die Vorschau und wähle „Einstellungen“. In Outlook Mobile tippst du auf die Add-In-Schaltfläche (siehe <a class="inline-link" href="#mobil">Outlook Mobile</a>).</p>
+        <p>Jede Änderung wird sofort gespeichert und die bereits eingefügte Signatur passt sich direkt an. Deine Einstellungen gelten auf allen Geräten.</p>
+        <dl class="settings-list">
+          <dt>Grußformel</dt><dd>Keine, „Mit freundlichen Grüßen“, „Freundliche Grüße“, „LG“ oder eine eigene. Dazu wählst du, wie viele Leerzeilen davor und danach stehen.</dd>
+          <dt>Nummer anzeigen</dt><dd>Welche Telefonnummern in der Signatur stehen, z. B. Handy und Festnetz oder nur Handy.</dd>
+          <dt>Mobile Nutzung</dt><dd>Fügt in Outlook Mobile den Hinweis „Wurde über Outlook Mobile versendet.“ hinzu – auf Wunsch mit eigenem Text.</dd>
+          <dt>Vertraulichkeit</dt><dd>Fügt den Vertraulichkeitshinweis unter der Signatur ein, auf Wunsch auch auf Englisch.</dd>
+        </dl>
+      </section>
+
+      <section id="automatisch">
+        <h2>Automatisch einfügen</h2>
+        <dl class="settings-list">
+          <dt>Neue E-Mails</dt><dd>erhalten immer automatisch eine Signatur.</dd>
+          <dt>Antworten / Weiterleitungen</dt><dd>je nach Häkchen bei „Automatisches Einfügen bei Antworten“ bzw. „… Weiterleitungen“.</dd>
+          <dt>Besprechungen</dt><dd>mit „Automatisches Einfügen bei Besprechungen“ auch in neuen Terminen, die du organisierst. Der Teams-Link bleibt unverändert.</dd>
+          <dt>Signatur nicht einfügen</dt><dd>schaltet das automatische Einfügen auf diesem Gerätetyp ganz aus („Signatur nicht einfügen“ am Computer, „Signatur auf Handy nicht einfügen“ in Outlook Mobile). Die Signatur wird dabei sofort entfernt bzw. wieder eingefügt.</dd>
+          <dt>ASE-Mails</dt><dd>Mit „Bei ASE generierten Mails keine Signatur einfügen“ bekommen automatisch erzeugte Mails (Betreff beginnt z. B. mit „Ihre Objektinformation - “) am Computer keine Signatur.</dd>
+        </dl>
+      </section>
+
+      <section id="intern">
+        <h2>Interne E-Mails</h2>
+        <p>Für Mails an Kolleginnen und Kollegen reicht oft eine kurze Signatur wie „LG Peter“.</p>
+        <ol>
+          <li>Setze das Häkchen bei „Signatur bei internen Emails nicht einfügen“.</li>
+          <li>Trage unter „Signatur für interne E-Mails“ deinen Kurztext ein (leer = gar keine Signatur).</li>
+          <li>Soll das auch für neue E-Mails gelten, setze zusätzlich „Auch bei neuen Mails nicht einfügen“.</li>
+        </ol>
+        <p>Sind <strong>nur interne</strong> Empfänger eingetragen, wird die kurze Signatur verwendet. Kommt ein externer Empfänger dazu, wechselt die Signatur automatisch zur vollständigen – und zurück, wenn er wieder entfernt wird. Spätestens beim Senden wird noch einmal geprüft, ob die Signatur zu den Empfängern passt.</p>
+      </section>
+
+      <section id="absender">
+        <h2>Anderer Absender</h2>
+        <p>Wählst du im Feld „Von“ eine andere Adresse, passt sich die Signatur an:</p>
+        <ul>
+          <li><strong>Für eine andere Person:</strong> deine Signatur mit dem Zusatz „im Auftrag von …“.</li>
+          <li><strong>Team-Postfächer</strong> (z. B. EDV, Office, Marketing): eine feste Vorlage des jeweiligen Teams.</li>
+        </ul>
+        <p>Im Add-In siehst du dann oben die Signatur für den Absender und darunter deine eigene. Per Rechtsklick → „Als Standard festlegen“ legst du fest, welche davon für diese Absenderadresse künftig automatisch verwendet wird.</p>
+      </section>
+
+      <section id="mobil">
+        <h2>Outlook Mobile</h2>
+        <ul>
+          <li>Die Signatur wird auch am Handy automatisch eingefügt – mit denselben Einstellungen wie am Computer.</li>
+          <li>Die Einstellungen öffnest du beim <strong>Lesen</strong> einer E-Mail über die Add-In-Schaltfläche „Attensam Signatur“. Während du schreibst, zeigt Outlook Mobile keine Add-Ins an.</li>
+          <li class="role-line" data-role="VIP CityChange" hidden>Hast du eigene Signaturen oder Standorte, siehst du zuerst eine Liste aller Signaturen. <strong>Lange drücken</strong> auf eine Vorschau öffnet die Optionen.</li>
+        </ul>
+      </section>
+
+      <section id="name" data-role="NameChange" hidden>
+        <h2>Eigener Name</h2>
+        <p>In den Einstellungen kannst du unter „Vorname“ und „Nachname“ eine andere Schreibweise für deine Signatur eintragen, z. B. einen Rufnamen. Leere Felder verwenden die Daten aus deinem Microsoft-365-Profil – das Profil selbst wird nicht geändert.</p>
+      </section>
+
+      <section id="standorte" data-role="CityChange" hidden>
+        <h2>Standorte</h2>
+        <p>Du kannst Signaturen mit der Adresse anderer Standorte verwenden.</p>
+        <ol>
+          <li>Klicke oben auf das <strong>Gebäude-Symbol</strong> und hake die Standorte an, die du brauchst.</li>
+          <li>Die gewählten Standorte erscheinen als eigene Vorschauen – ein Klick fügt sie ein.</li>
+          <li>Rechtsklick (am Handy: lange drücken) → „Als Standard festlegen“: Dieser Standort wird dann automatisch eingefügt.</li>
+        </ol>
+        <p>Jeder Standort kann eigene Einstellungen haben. Solange du für einen Standort nichts änderst, gelten die Einstellungen der Standard-Signatur. Mit „Einstellungen der Standard-Signatur übernehmen“ setzt du einen Standort wieder darauf zurück.</p>
+      </section>
+
+      <section id="vip" data-role="VIP" hidden>
+        <h2>Eigene Signaturen</h2>
+        <p>Du kannst bis zu <strong>drei</strong> eigene Signaturen anlegen, z. B. eine kurze für unterwegs.</p>
+        <ol>
+          <li>Klicke oben auf das <strong>Plus-Symbol</strong> (auch in Outlook Mobile verfügbar).</li>
+          <li>Gib einen Titel und die Signatur ein. Platzhalter wie {FirstName} oder {Mobile} werden automatisch mit deinen Daten gefüllt. <a class="inline-link" href="placeholders.html">Alle Platzhalter anzeigen</a></li>
+          <li>Speichern – die neue Signatur erscheint als Vorschau.</li>
+        </ol>
+        <p>Über Rechtsklick (am Handy: lange drücken) kannst du eine Signatur bearbeiten, löschen, als Standard festlegen oder ihre Einstellungen öffnen. Neue Signaturen verwenden die Einstellungen der Standard-Signatur, bis du eigene speicherst; mit „Einstellungen der Standard-Signatur übernehmen“ geht es wieder zurück.</p>
+      </section>
+
+      <section id="probleme">
+        <h2>Probleme lösen</h2>
+        <details>
+          <summary>Es wird keine Signatur eingefügt</summary>
+          <p>Öffne das Add-In einmal in einer E-Mail – dabei werden deine Daten geladen. Prüfe außerdem, ob „Signatur nicht einfügen“ in den Einstellungen ausgeschaltet ist.</p>
+        </details>
+        <details>
+          <summary>Änderungen kommen auf einem anderen Gerät nicht an</summary>
+          <p>Das Add-In holt sich beim Öffnen automatisch den neuesten Stand. Hilft das nicht, schließe Outlook auf dem Gerät ganz und öffne es neu (am Handy: App aus der Übersicht wischen).</p>
+        </details>
+        <details>
+          <summary>Nach einem Update sieht noch alles aus wie vorher</summary>
+          <p>Das Add-In lädt neue Versionen beim Öffnen selbst nach. Falls nicht: Outlook neu starten. Was sich geändert hat, steht unter „Neuigkeiten“.</p>
+        </details>
+        <details>
+          <summary>Nach einer Passwortänderung erscheint eine Anmeldung</summary>
+          <p>Das ist normal: Melde dich einmal neu an, danach funktioniert alles wie gewohnt.</p>
+        </details>
+        <details>
+          <summary>Etwas funktioniert nicht</summary>
+          <p>Bei Fehlern erscheint unten im Add-In die Schaltfläche „Fehler“ mit einem Protokoll, das du kopieren kannst. Schick es zusammen mit einer kurzen Beschreibung über „Feedback“ (Kategorie „Fehler“) – die Nachricht wird ohne Signatur mit deinem Konto versendet.</p>
+        </details>
+      </section>
+    </main>
   </section>
 </body>
 </html>

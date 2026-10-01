@@ -1,6 +1,35 @@
 {
-  "version": "1.3.2 Hotfix 4",
+  "version": "1.4.0",
   "releases": [
+    {
+      "version": "1.4.0",
+      "changes": [
+        "FIX: Einstellungen werden zuverlässig zwischen Computer und Handy abgeglichen – Änderungen auf einem Gerät werden nicht mehr von einem anderen überschrieben",
+        "NEU: Neue Versionen des Add-Ins werden beim Öffnen automatisch geladen, ohne Outlook neu zu starten",
+        "NEU: Deine Daten aus Microsoft 365 werden im Hintergrund aktualisiert – die automatische Signatur funktioniert auch, wenn du das Add-In länger nicht geöffnet hast",
+        "ÄNDERUNG: Die Hilfe wurde überarbeitet und übersichtlicher gestaltet",
+        {
+          "text": "NEU: Eigene Signaturen können jetzt auch in Outlook Mobile angelegt, bearbeitet und gelöscht werden",
+          "role": "VIP"
+        },
+        {
+          "text": "ÄNDERUNG: Das Symbol zum Hinzufügen eigener Signaturen befindet sich jetzt oben neben dem Hilfe-Symbol",
+          "role": "VIP"
+        },
+        {
+          "text": "NEU: Eigene Signaturen können wieder die Einstellungen der Standard-Signatur übernehmen",
+          "role": "VIP"
+        },
+        {
+          "text": "NEU: Eine verständliche Meldung erscheint, wenn der Speicherplatz für eigene Signaturen voll ist",
+          "role": "VIP"
+        },
+        {
+          "text": "NEU: Standort-Signaturen können wieder die Einstellungen der Standard-Signatur übernehmen",
+          "role": "CityChange"
+        }
+      ]
+    },
     {
       "version": "1.3.2 Hotfix 4",
       "changes": [
