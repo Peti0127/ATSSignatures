@@ -1,9 +1,14 @@
 {
-  "version": "1.4.0",
+  "version": "1.4.0 Hotfix 1",
   "releases": [
     {
-      "version": "1.4.0",
+      "version": "1.4.0 Hotfix 1",
       "changes": [
+        "NEU: Unten in den Einstellungen lassen sich die Einstellungen einer Signatur mit „Auf Grundeinstellungen zurücksetzen“ auf die Grundeinstellungen zurücksetzen",
+        {
+          "text": "ÄNDERUNG: „Einstellungen der Standard-Signatur übernehmen“ befindet sich jetzt unten in den Einstellungen",
+          "role": "VIP CityChange"
+        },
         "FIX: Einstellungen werden zuverlässig zwischen Computer und Handy abgeglichen – Änderungen auf einem Gerät werden nicht mehr von einem anderen überschrieben",
         "NEU: Neue Versionen des Add-Ins werden beim Öffnen automatisch geladen, ohne Outlook neu zu starten",
         "NEU: Deine Daten aus Microsoft 365 werden im Hintergrund aktualisiert – die automatische Signatur funktioniert auch, wenn du das Add-In länger nicht geöffnet hast",
