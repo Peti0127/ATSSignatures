@@ -1,6 +1,12 @@
 {
-  "version": "1.3.2",
+  "version": "1.3.2 Hotfix 1",
   "releases": [
+    {
+      "version": "1.3.2 Hotfix 1",
+      "changes": [
+        "FIX: Die Signatur wechselt auch wieder zurück, wenn Empfänger entfernt werden (z. B. externer Empfänger aus CC entfernt → wieder interne Signatur)"
+      ]
+    },
     {
       "version": "1.3.2",
       "changes": [
