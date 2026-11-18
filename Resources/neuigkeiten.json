@@ -1,6 +1,12 @@
 {
-  "version": "1.4.0 Hotfix 1",
+  "version": "1.5.0",
   "releases": [
+    {
+      "version": "1.5.0",
+      "changes": [
+        "NEU: In den Einstellungen kann unter „Schriftgröße“ die Schriftgröße der Signatur gewählt werden (8 bis 14, Standard 12)"
+      ]
+    },
     {
       "version": "1.4.0 Hotfix 1",
       "changes": [
